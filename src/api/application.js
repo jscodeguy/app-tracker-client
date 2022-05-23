@@ -35,3 +35,16 @@ export const createApplication = (user, newApplication) => {
     })
 }
 
+// PATCH -> update function
+export const updateApplication = (user, updatedApplication) => {
+    console.log('user', user)
+    console.log('this is newApplication', updatedApplication)
+    return axios({
+        url: `${apiUrl}/applications/${updatedApplication.id}`,
+        method: 'PATCH',
+        headers: {
+            Authorization: `Token token=${user.token}`
+        },
+        data: { application: updatedApplication }
+    })
+}
