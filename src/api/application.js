@@ -20,3 +20,18 @@ export const getOneApplication = (applicationId) => {
         }
     })
 }
+
+// POST -> create function
+export const createApplication = (user, newApplication) => {
+    console.log('user', user)
+    console.log('this is newApplication', newApplication)
+    return axios({
+        url: `${apiUrl}/applications`,
+        method: 'POST',
+        headers: {
+            Authorization: `Token token=${user.token}`
+        },
+        data: { application: newApplication }
+    })
+}
+
