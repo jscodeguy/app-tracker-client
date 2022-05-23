@@ -48,3 +48,15 @@ export const updateApplication = (user, updatedApplication) => {
         data: { application: updatedApplication }
     })
 }
+
+// DELETE -> remove function
+export const removeApplication = (user, applicationId) => {
+    console.log('user', user)
+    return axios({
+        url: `${apiUrl}/applications/${applicationId}`,
+        method: 'DELETE',
+        headers: {
+            Authorization: `Token token=${user.token}`
+        }
+    })
+}
