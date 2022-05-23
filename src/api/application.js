@@ -10,3 +10,13 @@ export const getAllApplications = () => {
         }
     })
 }
+
+// show function
+export const getOneApplication = (applicationId) => {
+    return axios({
+        url: `${apiUrl}/applications/${applicationId}`,
+        headers: {
+            Authorization: `Token token=${user.token}`
+        }
+    })
+}
