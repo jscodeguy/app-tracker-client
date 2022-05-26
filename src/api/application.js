@@ -2,19 +2,14 @@ import apiUrl from '../apiConfig'
 import axios from 'axios'
 
 // index function
-export const getAllApplications = () => {
-    return axios({
-        url: `${apiUrl}/applications`,
-        headers: {
-            Authorization: `Token token=${user.token}`
-        }
-    })
+export const getAllApplication = () => {
+    return axios(`${apiUrl}/application`)
 }
 
 // show function
-export const getOneApplication = (applicationId) => {
+export const getOneApplication = (user, applicationId) => {
     return axios({
-        url: `${apiUrl}/applications/${applicationId}`,
+        url: `${apiUrl}/application/${applicationId}`,
         headers: {
             Authorization: `Token token=${user.token}`
         }
@@ -26,7 +21,7 @@ export const createApplication = (user, newApplication) => {
     console.log('user', user)
     console.log('this is newApplication', newApplication)
     return axios({
-        url: `${apiUrl}/applications`,
+        url: `${apiUrl}/application`,
         method: 'POST',
         headers: {
             Authorization: `Token token=${user.token}`
@@ -53,7 +48,7 @@ export const updateApplication = (user, updatedApplication) => {
 export const removeApplication = (user, applicationId) => {
     console.log('user', user)
     return axios({
-        url: `${apiUrl}/applications/${applicationId}`,
+        url: `${apiUrl}/application/${applicationId}`,
         method: 'DELETE',
         headers: {
             Authorization: `Token token=${user.token}`
