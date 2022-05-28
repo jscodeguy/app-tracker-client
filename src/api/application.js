@@ -10,6 +10,7 @@ export const getAllApplication = () => {
 export const getOneApplication = (user, applicationId) => {
     return axios({
         url: `${apiUrl}/application/${applicationId}`,
+        method: 'GET',
         headers: {
             Authorization: `Token token=${user.token}`
         }
@@ -35,7 +36,7 @@ export const updateApplication = (user, updatedApplication) => {
     console.log('user', user)
     console.log('this is newApplication', updatedApplication)
     return axios({
-        url: `${apiUrl}/applications/${updatedApplication.id}`,
+        url: `${apiUrl}/applications/${updatedApplication._id}`,
         method: 'PATCH',
         headers: {
             Authorization: `Token token=${user.token}`

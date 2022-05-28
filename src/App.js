@@ -13,6 +13,7 @@ import SignIn from './components/auth/SignIn'
 import SignOut from './components/auth/SignOut'
 import ChangePassword from './components/auth/ChangePassword'
 import IndexApplication from './components/application/IndexApp'
+import ShowApplication from './components/application/showApp'
 
 const App = () => {
 
@@ -72,6 +73,11 @@ const App = () => {
 						path='/application'
 						element={
 						<IndexApplication user={user} msgAlert={msgAlert}/>}
+					/>
+					<Route
+						path='/application/:id'
+						element={
+						<ShowApplication user={user} msgAlert={msgAlert}/>}
 					/>
 				</Routes>
 			{msgAlerts.map((msgAlert) => (
