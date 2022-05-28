@@ -2,8 +2,14 @@ import apiUrl from '../apiConfig'
 import axios from 'axios'
 
 // index function
-export const getAllApplication = () => {
-    return axios(`${apiUrl}/application`)
+export const getAllApplication = (user) => {
+    return axios({
+        url: `${apiUrl}/application`,
+        method: 'GET',
+        headers: {
+            Authorization: `Token token=${user.token}`
+        }
+    })
 }
 
 // show function

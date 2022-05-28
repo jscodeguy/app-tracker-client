@@ -72,12 +72,16 @@ const App = () => {
 					<Route
 						path='/application'
 						element={
-						<IndexApplication user={user} msgAlert={msgAlert}/>}
+						<RequireAuth user={user}>
+							<IndexApplication user={user} msgAlert={msgAlert}/>
+						</RequireAuth>}
 					/>
 					<Route
 						path='/application/:id'
 						element={
-						<ShowApplication user={user} msgAlert={msgAlert}/>}
+						<RequireAuth user={user}>
+							<ShowApplication user={user} msgAlert={msgAlert}/>
+						</RequireAuth>}
 					/>
 				</Routes>
 			{msgAlerts.map((msgAlert) => (

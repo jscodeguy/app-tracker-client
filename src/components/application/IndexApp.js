@@ -14,13 +14,13 @@ const IndexApplication = (props) => {
     const [application, setApplication] = useState(null)
     const {user} = props
     useEffect(() => {
-        getAllApplication()
+        getAllApplication(user)
             .then(res => {
                 setApplication(res.data.application)
                 console.log('user in index react', user)
                 console.log('this is app in index react', res.data.application)
             })
-                .catch(console.log('no index'))
+                .catch()
     }, [])
 
     if (!application) {
