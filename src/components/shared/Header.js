@@ -19,6 +19,11 @@ const authenticatedOptions = (
 			</Link>
 		</Nav.Item>
 		<Nav.Item>
+			<Link to='createApplication' style={linkStyle}>
+				Create an application
+			</Link>
+		</Nav.Item>
+		<Nav.Item>
 			<Link to='application' style={linkStyle}>
 				See your applications
 			</Link>

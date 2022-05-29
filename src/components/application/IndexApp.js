@@ -21,7 +21,7 @@ const IndexApplication = (props) => {
                 console.log('this is app in index react', res.data.application)
             })
                 .catch()
-    }, [])
+    }, [user])
 
     if (!application) {
         return <p>loading...</p>

@@ -14,7 +14,7 @@ import SignOut from './components/auth/SignOut'
 import ChangePassword from './components/auth/ChangePassword'
 import IndexApplication from './components/application/IndexApp'
 import ShowApplication from './components/application/showApp'
-
+import CreateApplication from './components/application/CreateApp'
 const App = () => {
 
   const [user, setUser] = useState(null)
@@ -81,6 +81,13 @@ const App = () => {
 						element={
 						<RequireAuth user={user}>
 							<ShowApplication user={user} msgAlert={msgAlert}/>
+						</RequireAuth>}
+					/>
+					<Route
+						path='/createApplication'
+						element={
+						<RequireAuth user={user}>
+							<CreateApplication user={user} msgAlert={msgAlert}/>
 						</RequireAuth>}
 					/>
 				</Routes>
