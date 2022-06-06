@@ -37,7 +37,7 @@ const IndexApplication = (props) => {
                 <Card.Header>{application.jobTitle}</Card.Header>
                 <Card.Body>
                     <Card.Text>
-                Applied {application.dateApplied} <br></br>
+                            Applied {application.dateApplied} <br></br>
                         <Link to={`/application/${application._id}`}>View application for {application.company}</Link>
                     </Card.Text>
                 </Card.Body>
@@ -47,7 +47,7 @@ const IndexApplication = (props) => {
 
     return (
         <>
-            <h3>All the application</h3>
+            <h3 style={{textAlign: 'center'}}>Your applications</h3>
             <div style={cardContainerLayout}>
                 {applicationCards}
             </div>
